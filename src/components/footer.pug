@@ -1,3 +1,30 @@
 mixin footer()
-    footer.footer   
-        p footer
+    footer.footer 
+        nav.footer__nav 
+            .container.footer__wrapper 
+                a(href="index.html").header__logo 
+                    img(src="@img/logo.svg", alt="" draggable="false") 
+                ul.header__list  
+                    li.header__li 
+                        a(href="index.html").header__link Main  
+                    li.header__li 
+                        a(href="index.html").header__link Games 
+                    li.header__li 
+                        a(href="index.html").header__link News 
+                    li.header__li 
+                        a(href="index.html").header__link Forum 
+                form(action="").header__search.search  
+                    button(type="submit").search__button 
+                        img(src="@img/icon-search.svg", alt="") 
+                    input(type="search" placeholder="Search...").search__input 
+                button.footer__button.menu-open 
+                    span.footer__button-line 
+        .footer__social.container 
+            .footer__social-row 
+                a(href="#!" target="_blank").header__social-item
+                    img(src="@img/icon-facebook.svg", alt="") 
+                a(href="#!" target="_blank").header__social-item
+                    img(src="@img/icon-linkedin.svg", alt="") 
+                a(href="#!" target="_blank").header__social-item
+                    img(src="@img/icon-twitter.svg", alt="") 
+        p.footer__copy whatrequirements © 2022

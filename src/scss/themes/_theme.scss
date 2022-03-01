@@ -1,4 +1,14 @@
 // Тема по умолчанию
+:root{
+    --bg: #1D1F23;
+    --active: #F8611A;
+    --color: #fff;
+    --gray: #B0A9A9;
+    --header-bg: #2B2E35;
+    --header-color: #fff;
+    --footer-bg: #0D0E10;
+    --footer-color: #FFFFFF;
+}
 *{
     margin: 0;
     padding: 0;
@@ -14,6 +24,13 @@ html,
 body{
     height: 100%;
 }
+body{
+    background: var(--bg);
+    color: var(--color);
+    *{
+        color: inherit;
+    }
+}
 .wrapper{
     min-height: 100%;
     display: flex;
@@ -22,8 +39,20 @@ body{
         flex: 1 1 auto;
     }
 }
+.main{
+    padding-top: 90px;
+}
 button{
     background: none;
     border: none;
     cursor: pointer;
+}
+ul{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+picture{
+    line-height: 0;
 }

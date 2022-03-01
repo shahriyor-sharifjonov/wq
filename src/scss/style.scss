@@ -25,14 +25,17 @@
     'layout/header',
     'layout/footer',
     'layout/sidebar',
-    'layout/forms';
+    'layout/forms',
+    'layout/intro',
+    'layout/popular';
 
 // components
 @import 
     'components/buttons',
     'components/carousel',
     'components/cover',
-    'components/dropdown';
+    'components/dropdown',
+    'components/search';
 
 // pages
 @import 

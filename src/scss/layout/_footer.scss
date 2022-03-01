@@ -1,1 +1,103 @@
-// Футер
+.footer{
+    background: var(--footer-bg);
+    color: var(--footer-color);
+    *{
+        color: inherit;
+    }
+    &__nav{
+        height: 90px;
+        display: flex;
+        align-items: center;
+    }
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 100px;
+        @include media(1200){
+            column-gap: 70px;
+        }
+        @include media(576){
+            column-gap: 30px;
+        }
+    }
+    &__copy{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        line-height: 122.19%;
+        margin-top: 70px;
+        margin-bottom: 50px;
+        text-transform: uppercase;
+        color: #A6A4A9;  
+        @include media(992){
+            display: none;
+        }      
+    }
+    &__social{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-top: 10px;
+        @include media(992){
+            display: none;
+        }
+        &-row{
+            width: 276px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            column-gap: 19px;
+        }
+    }
+    &__button {
+        width: 30px;
+        height: 22px;
+        position: relative;
+        border: none;
+        outline: none;
+        background: none;
+        display: none;
+        @include media($lg) {
+            display: block;
+        }
+        &.open {
+            .footer__button-line,
+            &::before {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(135deg);
+                background: var(--color);
+            }
+            &::after {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(-135deg);
+                background: var(--color);
+            }
+        }
+        &::before,
+        &::after,
+        &-line {
+            transition: 0.5s;
+            position: absolute;
+            content: "";
+            left: 0;
+            width: 100%;
+            height: 4px;
+            border-radius: 4px;
+            background: var(--active);
+        }
+        &::before {
+            top: 0;
+        }
+        &::after {
+            bottom: 0;
+        }
+        &-line {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}

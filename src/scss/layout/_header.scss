@@ -1,1 +1,224 @@
-// Шапка
+.header{
+    background: var(--header-bg);
+    color: var(--header-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    z-index: 50;
+    *{
+        color: inherit;
+    }
+    &__nav{
+        height: 90px;
+        display: flex;
+        align-items: center;
+    }
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 100px;
+        z-index: 55;
+        @include media(1200){
+            column-gap: 70px;
+        }
+        @include media(576){
+            column-gap: 30px;
+        }
+    }
+    &__logo{
+        line-height: 0;
+        @include media(576){
+            width: 215px;
+            img{
+                width: 100%;
+            }
+        }
+    }
+    &__list{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex: 1 1 auto;
+        max-width: 433px;
+        @include media(992){
+            display: none;
+        }
+    }
+    &__link{
+        font-size: 16px;
+        line-height: 156.69%;
+        position: relative;
+        &.active{
+            color: var(--active);
+            &::after{
+                content: '';
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom :-36px;
+                background: var(--active);
+                width: calc(100% + 14px);
+                height: 2px;
+            }
+        }
+    }
+    &__search{
+        @include media(992){
+            display: none;
+        }
+    }
+    &__button {
+        width: 30px;
+        height: 22px;
+        position: relative;
+        border: none;
+        outline: none;
+        background: none;
+        display: none;
+        @include media($lg) {
+            display: block;
+        }
+        &.open {
+            .header__button-line,
+            &::before {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(135deg);
+                background: var(--color);
+            }
+            &::after {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(-135deg);
+                background: var(--color);
+            }
+        }
+        &::before,
+        &::after,
+        &-line {
+            transition: 0.5s;
+            position: absolute;
+            content: "";
+            left: 0;
+            width: 100%;
+            height: 4px;
+            border-radius: 4px;
+            background: var(--active);
+        }
+        &::before {
+            top: 0;
+        }
+        &::after {
+            bottom: 0;
+        }
+        &-line {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    &__menu{
+        display: none;
+        @include media(992){
+            display: flex;
+            flex-direction: column;
+            row-gap: 30px;
+            opacity: 0;
+            visibility: hidden;
+            padding: 90px 15px 30px 15px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--header-bg);
+            color: var(--header-color);
+            z-index: 50;    
+            transform: translateY(-50px);
+            transition: opacity 200ms ease, transform 500ms ease, visibility 200ms ease;
+            &.open{
+                transform: translateY(0);
+                opacity: 1;
+                transition: opacity 200ms ease, transform 200ms ease;
+                visibility: visible;
+            }
+            &-wrapper{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                row-gap: 30px;
+                flex: 1 1 auto;
+            }
+            .header__list{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                row-gap: 40px;
+                max-width: 100%;
+                .header__li{
+                    width: 100%;
+                    &:not(:last-of-type){
+                        position: relative;
+                        &::before{
+                            content: '';
+                            position: absolute;
+                            bottom: -20px;
+                            left: 0;
+                            width: 100%;
+                            height: 1px;
+                            background: #45526F;
+                        }
+                    }
+                }
+                .header__link{
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    position: relative;
+                    column-gap: 11px;
+                    &::before{
+                        content: '';
+                        width: 4px;
+                        height: 4px;
+                        border-radius: 50%;
+                        background: var(--active);
+                    }
+                }
+            }
+        }
+    }
+    &__social{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: 20px;
+        &-p{
+            font-family: 'ProximaNova', 'Roboto', sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 22px;
+            color: #FFFFFF;            
+        }
+        &-list{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            column-gap: 5px;
+        }
+        &-item{
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.32);
+        }
+    }
+}

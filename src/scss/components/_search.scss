@@ -1,0 +1,26 @@
+.search{
+    background: #383C46;
+    border: 1px solid #555A61;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding-left: 32px;
+    &__button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 18px;
+    }
+    &__input{
+        background: #383C46;
+        border: none;
+        border-radius: 0 10px 10px 0;
+        height: 48px;
+        font-size: 16px;
+        line-height: 19px;
+        padding-right: 25px;
+        width: 100%;
+    }
+}

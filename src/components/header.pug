@@ -1,3 +1,45 @@
 mixin header()
     header.header 
-        p header
+        nav.header__nav 
+            .container.header__wrapper 
+                a(href="index.html").header__logo 
+                    img(src="@img/logo.svg", alt="" draggable="false") 
+                ul.header__list  
+                    li.header__li 
+                        a(href="index.html").header__link.active Main  
+                    li.header__li 
+                        a(href="index.html").header__link Games 
+                    li.header__li 
+                        a(href="index.html").header__link News 
+                    li.header__li 
+                        a(href="index.html").header__link Forum 
+                form(action="").header__search.search  
+                    button(type="submit").search__button 
+                        img(src="@img/icon-search.svg", alt="") 
+                    input(type="search" placeholder="Search...").search__input 
+                button.header__button.menu-open 
+                    span.header__button-line 
+        .header__menu 
+            .header__menu-wrapper.container
+                form(action="").header__menu-search.search  
+                    button(type="submit").search__button 
+                        img(src="@img/icon-search.svg", alt="") 
+                    input(type="search" placeholder="Search...").search__input
+                ul.header__list 
+                    li.header__li 
+                        a(href="index.html").header__link Main  
+                    li.header__li 
+                        a(href="index.html").header__link Games 
+                    li.header__li 
+                        a(href="index.html").header__link News 
+                    li.header__li 
+                        a(href="index.html").header__link Forum 
+                .header__social 
+                    p.header__social-p Share
+                    .header__social-list
+                        a(href="#!" target="_blank").header__social-item
+                            img(src="@img/icon-facebook.svg", alt="") 
+                        a(href="#!" target="_blank").header__social-item
+                            img(src="@img/icon-linkedin.svg", alt="") 
+                        a(href="#!" target="_blank").header__social-item
+                            img(src="@img/icon-twitter.svg", alt="") 
