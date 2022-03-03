@@ -1,0 +1,36 @@
+.pagination{
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    margin-top: 40px;
+    display: none;
+    @include media(768){
+        display: flex;
+    }
+    &__item{
+        width: 34px;
+        height: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border-radius: 4.11429px;
+        border: 1.37143px solid #686868;
+        &.active{
+            background: #F8611A;
+            border: 1.37143px solid #F8611A;
+        }
+    }
+    &__dots{
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       column-gap: 3px;
+       span{
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: #686868;
+       }
+    }
+}

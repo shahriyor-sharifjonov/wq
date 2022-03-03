@@ -1,2 +1,42 @@
+mixin item(title = 'title', img = 'assasins')
+    .popular__item 
+        .popular__item-img 
+            img(src=`@img/${img}.png`, alt=`${title}` draggable="false")
+        .popular__item-content 
+            p.popular__item-title #{title}
+            p.popular__item-info #[span Genre: ] Action, Fighting, Battle Royale
+            p.popular__item-info #[span Developer: ]  Iron Galaxy
+            p.popular__item-info #[span Release date: ]  Epic Games Publishing
+            a(href="#!").popular__item-button View 
+
 mixin popular()
-    
+    .popular 
+        .popular__body.container 
+            .popular__header
+                h2.popular__title Popular games
+                a(href="#!").popular__button All categories 
+                    <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.00018 4.14882L2.99507 0.143779C2.90244 0.0510728 2.77878 0 2.64693 0C2.51507 0 2.39142 0.0510728 2.29878 0.143779L2.00383 0.438655C1.81191 0.6308 1.81191 0.94309 2.00383 1.13494L5.36703 4.49813L2.0001 7.86506C1.90747 7.95776 1.85632 8.08135 1.85632 8.21313C1.85632 8.34505 1.90747 8.46864 2.0001 8.56142L2.29505 8.85622C2.38776 8.94893 2.51134 9 2.64319 9C2.77505 9 2.89871 8.94893 2.99134 8.85622L7.00018 4.84752C7.09304 4.75452 7.14404 4.63035 7.14374 4.49835C7.14404 4.36584 7.09304 4.24175 7.00018 4.14882Z"/>
+                    </svg>
+            .popular__content 
+                +item('Assasin\'s Creed Valhalla', 'assasins')
+                +item('watch dogs: legion', 'watchdogs')
+                +item('call of duty: vanguard', 'call-of-duty')
+                +item('battlefield 2042', 'battlefield')
+                +item('withcer 3: wild hunt', 'witcher')
+                +item('dark souls III', 'darksouls')
+                +item('PUBG: battlegrounds', 'pubg')
+                +item('DOTA 2', 'dota')
+                +item('grand theft auto: V', 'gta')
+            .popular__pagination.pagination
+                a(href="#!").pagination__item.active 1
+                a(href="#!").pagination__item 2
+                a(href="#!").pagination__item 3
+                a(href="#!").pagination__dots 
+                    span
+                    span
+                    span
+                a(href="#!").pagination__item 4
+                a(href="#!").pagination__item 5
+                a(href="#!").pagination__item 6
+
