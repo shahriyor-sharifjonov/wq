@@ -1,0 +1,64 @@
+mixin comment(num, name, text)
+    .comments__item 
+        .comments__item-header 
+            .comments__author 
+                img(src=`@img/user-${num}.png`, alt="" draggable="false").comments__author-img
+                .comments__author-info 
+                    p.comments__author-name #{name}
+                    p.comments__author-date Yesterday at 11:45 PM
+            .comments__item-action 
+                button(type='button').comments__item-action-btn 
+                    img(src="@img/icon-like.svg", alt="" draggable="false")
+                button(type='button').comments__item-action-btn 
+                    img(src="@img/icon-dislike.svg", alt="" draggable="false")
+                button(type='button').comments__item-action-btn 
+                    img(src="@img/icon-reply.svg", alt="" draggable="false")
+        .comments__item-body 
+            p #{text}
+
+
+mixin comments()
+    .comments 
+        .comments__body.container 
+            .comments__header 
+                .comments__tab 
+                    button(type='button').comments__tab-item.active Most popular
+                    button(type='button').comments__tab-item New
+                .comments__pagination.pagination
+                    a(href="#!").pagination__item.active.mob 1
+                    a(href="#!").pagination__item.mob 2
+                    a(href="#!").pagination__item.mob 3
+                    a(href="#!").pagination__dots 
+                        span 
+                        span  
+                        span 
+                    a(href="#!").pagination__item 4
+                    a(href="#!").pagination__item 5
+                    a(href="#!").pagination__item 6
+            .comments__content 
+                - var text_1 = 'If the computer starts to work poorly while the game is running, you can reduce the settings to minimum levels, which will increase performance due to graphics degradation. If this option does not fix the problem, then you can get acquainted with other similar games on the site that will meet the system requirements of your PC.'
+                - var text_2 = 'Direct X on your computer. You can download Direct X from the official website, where you can choose the current version that suits your operating system. The game is functional on Windows operating systems 7 / 8.1 / 10 (64 bit). The game will not work on older versions, and it is not able to work correctly on new versions. RAM is an important part for computer IRGs. The game requires about 6 GB of RAM.'
+                - var text_3 = 'If the computer starts to work poorly while the game is running, you can reduce the settings to minimum levels, which will increase performance due to graphics degradation.'
+                - var text_4 = 'If the computer starts to work poorly while the game is running, you can reduce the settings to minimum levels, which will increase performance due to graphics degradation. The game will not work on older versions, and it is not able to work correctly on new versions. RAM is an important part for computer IRGs. The game requires about 6 GB of RAM. '
+                +comment(1, 'John Smith', text_1)
+                +comment(2, 'Alex Johnson', text_2)
+                +comment(3, 'Bruce Old', text_3)
+                +comment(4, 'Tom Hardys', text_4)
+            .pagination.comments__pagination_2
+                    a(href="#!").pagination__item.active.mob 1
+                    a(href="#!").pagination__item.mob 2
+                    a(href="#!").pagination__item.mob 3
+                    a(href="#!").pagination__dots 
+                        span 
+                        span  
+                        span 
+                    a(href="#!").pagination__item 4
+                    a(href="#!").pagination__item 5
+                    a(href="#!").pagination__item 6
+            hr.comments__hr
+            form(action="").comments__form 
+                .comments__form-user
+                    img(src="@img/user-1.png", alt="" draggable="false").comments__form-user-img
+                    p.comments__form-user-name Your Account
+                textarea(name="", cols="30", rows="10" placeholder="Text your message...").comments__form-textarea.textarea
+                button(type="submit").comments__form-button send

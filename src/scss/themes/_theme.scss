@@ -56,3 +56,19 @@ a{
 picture{
     line-height: 0;
 }
+.textarea{
+    resize: none;
+    background: #232529;
+    border: 1px solid #545151;
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: 100%;
+    padding: 20px 24px;
+    font-size: 16px;
+    line-height: 176.19%;
+    &::placeholder{
+        font-size: 16px;
+        line-height: 176.19%;
+        color: #676767;
+    }
+}
