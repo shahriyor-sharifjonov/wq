@@ -1,0 +1,55 @@
+mixin game(img, title, i)
+    .game  
+        img(src=`@img/game-${i}-bg.png`, alt="" draggable="false").game__bg 
+        .game__img 
+            img(src=`@img/${img}.png`, alt=`${title}` draggable="false")
+        .game__content 
+            p.game__title #{title}
+            p.game__info #[span Release date:] 2022. March 01. (PC)
+            p.game__info #[span Developer:] Iron Galaxy
+            p.game__info #[span Genre:] Action, Adventure, Roguelite
+
+mixin games()
+    .games 
+        .games__body.container 
+            h2.games__title Games
+            .games__filter.filter 
+                .filter__list
+                    each val, index in ['all', 'Action', 'adventure', 'roguelite', 'casual', 'Open world', 'RPG', 'Platformer']
+                        if index == 0
+                            a(href="#!" class="filter__item active")= val
+                        else
+                            a(href="#!" class="filter__item")= val
+                p.filter__title All game
+                button(type='button').filter__button 
+                    img(src="@img/icon-filter.svg", alt="" draggable="false")
+                    span filters
+                .filter__popup 
+                    .filter__popup-body
+                        .filter__popup-header 
+                            .filter__popup-search.search 
+                                button(type="submit").search__button 
+                                    img(src="@img/icon-search.svg", alt="" draggable="false")  
+                                input(type="search" placeholder="Search...").search__input 
+                            button(type='button').filter__popup-button.header__button.open 
+                                span.header__button-line 
+                        .filter__popup-list 
+                            each val in ['all', 'Action', 'adventure', 'roguelite', 'casual', 'Open world', 'RPG', 'Platformer']
+                                a(href="#!" class="filter__popup-item")= val
+            .games__content 
+                +game('witcher', 'withcer 3: wild hunt', '1')
+                +game('watchdogs', 'Watch dogs: legion', '2')
+                +game('darksouls', 'dark souls III', '3')
+                +game('battlefield', 'battlefield 2042', '4')
+                +game('call-of-duty', 'call of duty: vanguard', '5')
+            .games__pagination.pagination
+                a(href="#!").pagination__item.active 1
+                a(href="#!").pagination__item 2
+                a(href="#!").pagination__item 3
+                a(href="#!").pagination__dots 
+                    span 
+                    span  
+                    span 
+                a(href="#!").pagination__item 4
+                a(href="#!").pagination__item 5
+                a(href="#!").pagination__item 6

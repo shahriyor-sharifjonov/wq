@@ -27,7 +27,9 @@
     'layout/sidebar',
     'layout/forms',
     'layout/intro',
-    'layout/popular';
+    'layout/popular',
+    'layout/carousel',
+    'layout/games';
 
 // components
 @import 
@@ -36,7 +38,9 @@
     'components/cover',
     'components/dropdown',
     'components/search',
-    'components/pagination';
+    'components/pagination',
+    'components/filter',
+    'components/breadcrumbs';
 
 // pages
 @import 

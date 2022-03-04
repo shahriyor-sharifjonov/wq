@@ -1,0 +1,116 @@
+.games{
+    margin-top: 60px;
+    margin-bottom: 80px;
+    @include media(992){
+        margin-bottom: 60px;
+    }
+    &__title{
+        margin-bottom: 34px;
+        font-weight: 600;
+        font-size: 35px;
+        line-height: 129.69%;
+        text-transform: capitalize;
+        color: #FFFFFF;   
+        @include media(992){
+            display: none;
+        }     
+    }
+    &__pagination{
+        @include media(992){
+            display: flex;
+        }
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+        @include media(992){
+            background: #252B33;
+            border-radius: 0 0 10px 10px;
+            padding: 45px 22px; 
+            row-gap: 20px;
+        }
+    }
+}
+
+.game{
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    isolation: isolate;
+    display: flex;
+    justify-content: flex-start;
+    @include media(992){
+        border-radius: 10px;
+        min-height: 80px;
+    }
+    &__bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+    &__img{
+        line-height: 0;
+        max-width: 365px;
+        width: 100%;
+        object-fit: cover;
+        @include media(992){
+            max-width: 300px;
+        }
+        @include media(768){
+            min-width: 80px;
+            width: 80px;
+        }       
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__content{
+        padding: 20px 45px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        @include media(992){
+            padding: 20px;
+        }
+    }
+    &__title{
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 129.69%;
+        margin-bottom: 22px;
+        text-transform: uppercase;
+        color: #FFFFFF; 
+        @include media(768){
+            margin-bottom: 0;
+            font-size: 18px;
+            line-height: 129.69%;
+        }       
+        @include media(450){
+            font-size: 15px;
+            font-weight: 500;
+        }
+    }
+    &__info{
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 129.69%;
+        color: #FFFFFF;
+        @include media(768){
+            display: none;
+        }
+        &:not(:last-of-type){
+            margin-bottom: 8px;
+        }
+        span{
+            color: #6B737C;
+        }
+    }
+}
