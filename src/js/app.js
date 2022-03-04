@@ -18,10 +18,12 @@ menuBtn.forEach(el => {
 })
 
 
-const fraction = document.getElementById("fraction");
-const slides = document.querySelectorAll(".swiper-slide");
-const slideCount = slides.length;
-fraction.innerHTML = `<span>1</span> / ${slideCount}`;
+if(document.getElementById('fraction')){
+  const fraction = document.getElementById("fraction");
+  const slides = document.querySelectorAll(".swiper-slide");
+  const slideCount = slides.length;
+  fraction.innerHTML = `<span>1</span> / ${slideCount}`;
+}
 new Swiper(".carousel__body", {
   slidesPerView: 1,
   modules: [Navigation, Pagination],
@@ -52,5 +54,22 @@ document.querySelectorAll('.filter').forEach(el => {
   close.addEventListener('click', el => {
     filter.classList.remove('open');
     document.body.style.overflowY = "auto"
+  })
+})
+
+document.querySelectorAll('.requirements__item').forEach(el => {
+  const btn = el.querySelector('.requirements__button-icon');
+  const btnText = el.querySelector('.requirements__button p');
+  const items = el.querySelectorAll('.requirements__row.toggle');
+  btn.addEventListener('click', e => {
+    btn.classList.toggle('active');
+    items.forEach(item => {
+      item.classList.toggle('toggled');
+    })
+    if(btn.classList.contains('active')){
+      btnText.innerHTML = 'hide requirements';
+    }else{
+      btnText.innerHTML = 'See all requirements';
+    }
   })
 })

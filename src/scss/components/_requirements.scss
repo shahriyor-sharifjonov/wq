@@ -1,0 +1,161 @@
+.requirements{
+    margin-bottom: 60px;
+    &__title{
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 156.69%;
+        margin-bottom: 35px;
+        color: #FFFFFF; 
+        @include media(768){
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 156.69%;
+            color: #FFFFFF;
+            text-align: center;
+        }       
+    }
+    &__item{
+        &:not(:last-of-type){
+            @include media(768){
+                margin-bottom: 40px;
+            }
+        }
+        &-title{
+            font-weight: 800;
+            font-size: 20px;
+            line-height: 156.69%;
+            text-transform: uppercase;
+            color: #85878B;
+            margin-bottom: 25px;
+            padding-left: 70px;
+            @include media(768){
+                padding-left: 0;
+                font-weight: 800;
+                font-size: 16px;
+                line-height: 156.69%;
+                margin-bottom: 11px;
+            }
+        }
+    }
+    &__row{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0 70px;
+        @include media(768){
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0;
+            &:not(:last-of-type){
+                margin-bottom: 10px;
+            }
+            &.toggled{
+                display: none;
+            }
+        }
+        &:nth-of-type(odd){
+            background: #2C3038;
+            @include media(768){
+                background: transparent;
+            }
+        }
+    }
+    &__header{
+        width: 50%;
+        padding: 12px 0;
+        @include media(768){
+            background: #272E3E;
+            border-radius: 10px 10px 0px 0px;
+            padding: 10px 22px;
+            width: 100%;
+        }
+        p{
+            font-family: 'UniNeueRegular';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 156.69%;
+            color: #FFFFFF;
+        }
+    }
+    &__content{
+        width: 50%;
+        padding: 12px 0;
+        @include media(768){
+            background: #2E3647;
+            border-radius: 0px 0px 10px 10px;
+            padding: 10px 22px;
+            width: 100%;
+        }
+        p{
+            font-family: 'UniNeueRegular';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 156.69%;
+            color: #FFFFFF;
+        }
+    }
+    &__hr{
+        width: 100%;
+        height: 1px;
+        background: #686868;
+        margin-top: 38px;
+        margin-bottom: 50px;
+        @include media(768){
+            display: none;
+        }
+    }
+    &__button{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+        width: 100%;
+        @include media(768){
+            display: flex;
+        }
+        &-icon{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            &.active{
+                transform: rotate(-180deg);
+            }
+            &::before{
+                content: '';
+                width: 100%;
+                height: 2px;
+                background: #565656;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                z-index: -2;
+            }
+            &::after{
+                content: '';
+                background: var(--bg);
+                z-index: -1;
+                position: absolute;
+                width: 40px;
+                height: 20px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        p{
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 129.69%;
+            text-decoration-line: underline;
+            text-transform: uppercase;
+            color: #DD5A1B;
+            margin-top: 12px;
+        }
+    }
+}
